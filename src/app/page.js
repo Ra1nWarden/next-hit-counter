@@ -4,6 +4,7 @@ import {
   readFile,
   writeFile,
 } from '../helpers/file-helpers';
+import { NumberButton } from './NumberButton';
 
 const DATABASE_PATH = '/src/database.json';
 
@@ -32,7 +33,8 @@ function Home() {
   return (
     <main>
       <h1>Welcome!</h1>
-      <p>You are visitor number {num}.</p>
+      <p>You are visitor number </p>
+      <NumberButton num={num} />
     </main>
   );
 }
