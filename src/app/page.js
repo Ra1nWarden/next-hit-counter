@@ -24,10 +24,15 @@ writeFile(
 */
 
 function Home() {
+  const file = readFile(DATABASE_PATH);
+  const json = JSON.parse(file);
+  const num = json.hits;
+  json.hits = num + 1;
+  writeFile(DATABASE_PATH, JSON.stringify(json));
   return (
     <main>
       <h1>Welcome!</h1>
-      <p>You are visitor number X.</p>
+      <p>You are visitor number {num}.</p>
     </main>
   );
 }
